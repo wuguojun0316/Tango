@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- PDF.js -->
+        <link rel="stylesheet" href="bower_components/pdfjs-dist/web/pdf_viewer.css">
+        <script src="bower_components/pdfjs-dist/web/compatibility.js"></script>
+        <script src="bower_components/pdfjs-dist/build/pdf.js"></script>
+        <script src="bower_components/pdfjs-dist/web/pdf_viewer.js"></script>
+
+        <script src="js/main.js"></script>
+        <script>
+            function test_pdfviewer() {
+                var url = "https://s3.amazonaws.com/trigger-blog-content/technote_pdf/whitepaper.pdf";
+                forge.pdfviewer.open(url, function () {
+                    forge.logging.log("Finished viewing PDF file");
+                }, function (e) {
+                    forge.logging.error("Couldn't open PDF file: " + JSON.stringify(e));
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <h1>Trigger.io &#10084; 's Mozilla PDF.js</h1>
+
+            <hr />
+
+            <button onClick="test_pdfviewer();">Test PDF.js Viewer</button>
+        </center>
+
+    </body>
+</html>
