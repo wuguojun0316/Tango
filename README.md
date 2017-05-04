@@ -4,3 +4,13 @@ It's a test project, nothing to show!
 #####月黑雁飞高，单于爷遁逃，
 #####欲将轻骑逐，大雪满弓刀。
 ### Git使用方法
+Git和其他版本控制系统如SVN的一个不同之处就是暂存区的概念；
+##### 工作区(Working Directory)
+项目所在电脑的所能看到的目录和文件；
+##### 版本库(Repository)
+在工作区所根目录，有一个隐藏的目录<code>.git</code>，此目录不算工作区，而是Git的版本库；
+Git的版本库里存储了很多东西，其中最重要的就是成为stage(或者叫index)的暂存区，还有Git自动创建的第一个分支<code>master</code>，以及指向<code>master</code>的一个指针<code style="color: red">HEAD</code>。
+<br/>
+把文件往Git版本库添加的时候，是分两步执行的：
+第一步: 是用<code>git add</code>把文件添加进去，实际上就是把文件修改添加到暂存区;
+第二部: 是用<code>git commit</code>体检更改，实际上就是把暂存区的所有内容提交到当前分支;
